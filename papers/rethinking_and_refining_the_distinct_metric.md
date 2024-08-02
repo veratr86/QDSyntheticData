@@ -5,7 +5,7 @@ ID: #327
 ## Summary
 
 The aim of the paper is to improve the so called "Distict" metric proposed few years ago in another paper. The Distinct
-metric is also what is called token type ratio, which is the ratio of unique tokens over all the tokens present in the text. The paper presents the limitations of the distinct metric like the sensitivity to length, that is shorter texts can have higher distinct scores while longer can have lower ones due to the repetition of tokens. The new proposed refined metric called expectation-adjusted distinct (EAD) is the number of distinct tokens divided by the expectation of distinct/unique tokens.
+metric is the ratio of unique tokens (n-grams) over all the tokens (n-grams) present in the text. The paper presents the limitations of the distinct metric like the sensitivity to length, that is shorter texts can have higher distinct scores while longer can have lower ones due to the repetition of tokens. The new proposed refined metric called expectation-adjusted distinct (EAD) is the number of distinct tokens (n-grams) divided by the expectation of distinct/unique tokens (n-grams).
 Empirical evaluations show that this metric correlates more with human judgements. 
 
 ## Relevance to survey topic (1-5)
@@ -25,7 +25,8 @@ NA
 
 - How is quality measured? NA
 - How is diversity measured? 
-EAD score: N/(V[1-((V-1)/V)^C]), where N = #unique tokens, C = #all tokens, V = #tokens in the whole vocabulary
+EAD score: N/(V[1-((V-1)/V)^C]), where N = #unique tokens (n-grams), C = #all tokens (n-grams), V = #tokens in the whole vocabulary.
+
 - Fine-tuning results? NA
 
 ## Paper Tags
@@ -37,4 +38,6 @@ EAD score: N/(V[1-((V-1)/V)^C]), where N = #unique tokens, C = #all tokens, V = 
 
 Jiwei Li, Michel Galley, Chris Brockett, Jianfeng Gao, and Bill Dolan. 2016. A diversity-promoting objec- tive function for neural conversation models. 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, NAACL HLT 2016 - Proceedings of the Conference, pages 110–119. https://aclanthology.org/N16-1014.pdf
 
+## Other comments
 
+The EAD score can be used a complexity measure per sample?
